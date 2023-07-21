@@ -1,14 +1,16 @@
 package main
 
 import (
-	"flag" // 追加する
 	"fmt"
+	"os"
 )
 
-func main() {
-	// ゠゠゠゠゠゠゠゠゠゠ここから変更゠゠゠゠゠゠゠゠゠゠
-	flag.Parse()
-	arg := flag.Arg(0)
-	fmt.Printf("Hello %s\n", arg)
-	// ゠゠゠゠゠゠゠゠゠゠ここまで変更゠゠゠゠゠゠゠゠゠゠
+func main() {    
+	_, err := os.Create("./hello.txt")
+	if err != nil {
+		fmt.Printf("failed to create file \n: %v", err)
+		return
+	}
+
+	fmt.Println("Done!")
 }
