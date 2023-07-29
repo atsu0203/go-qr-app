@@ -11,7 +11,7 @@ func main() {
 	arg := flag.Arg(0)
 	msg := fmt.Sprintf("Hello %s\n", arg)
 
-	f, err := os.Create("hello.txt") 
+	f, err := os.Create("hello2.txt") 
 	if err != nil {
 		fmt.Printf("failed to create file \n: %v", err)
 		return
